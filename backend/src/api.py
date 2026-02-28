@@ -1,7 +1,7 @@
 from fastapi import FastAPI, File, Form, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from services.pose import extract_metrics
+# from services.pose import extract_metrics
 from services.llm import generate_coaching_feedback
 
 app = FastAPI()
@@ -42,7 +42,8 @@ async def analyze(
     video_bytes = await video.read()
 
     # Step 1: Extract biomechanical metrics via MediaPipe
-    metrics = extract_metrics(video_bytes)
+    # metrics = extract_metrics(video_bytes)
+    metrics = None
     if "error" in metrics:
         raise HTTPException(status_code=422, detail=metrics["error"])
 
