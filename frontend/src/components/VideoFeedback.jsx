@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { getDataFromBackend } from "./Utils";
+import { getDataFromBackend } from "../services/Utils";
 
 import axios from "axios"
 
-import "./App.css";
+import "../App.css";
 
 function VideoFeedback({}) {
     const [video, setVideo] = useState(undefined);
