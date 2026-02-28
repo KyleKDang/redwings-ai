@@ -1,46 +1,13 @@
-import { useState } from "react";
-
-import axios from "axios"
 
 import "./App.css";
 
-import logo from "./assets/testlogo.png"
+import VideoFeedback from "./VideoFeedback"
 
 function App() {
 
-	const [video, setVideo] = useState(undefined);
-
-	const [output, setOutput] = useState(undefined);
-
-    let onChangeHandler = (e) => {
-        setVideo(e.target.files[0])
-    };
-
-    let onSubmitHandler = (e) => {
-		if (video === undefined)
-			return;
-
-		// await axios.post()
-
-		setOutput("Working on it . . .");
-
-		setTimeout(() => {setOutput("sample output")}, 5000);
-		// replace later with get data
-
-		console.log(video);
-    };
-	
-	return (<div>
-		<img class="logo" src={logo}></img>
-		<p className="instruction">Input a video:</p>
-		<input type="file" accept=".mp4" className="button" onChange={onChangeHandler} />
-		<div>
-        	<input type="button" className="button submit-button" onClick={onSubmitHandler} value="Submit Video"/>
-		</div>
-		<div>
-			{output}
-		</div>
-	</div>)
+	return <div>
+		<VideoFeedback />
+	</div>
 }
 
 export default App;
