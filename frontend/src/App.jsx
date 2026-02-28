@@ -108,7 +108,7 @@ function App() {
           )}
 
           <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-10 hover:border-[#E8112D]/25 transition-colors duration-300">
-            <VideoFeedback />
+            <VideoFeedback profile={profile}/>
           </div>
 
           {/* How it works */}

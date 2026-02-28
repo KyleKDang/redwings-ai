@@ -6,7 +6,7 @@ import axios from "axios"
 
 import "../App.css";
 
-function VideoFeedback({}) {
+function VideoFeedback({profile}) {
     const [video, setVideo] = useState(undefined);
 
 	const [output, setOutput] = useState("");
@@ -19,19 +19,32 @@ function VideoFeedback({}) {
 		if (video === undefined)
 			return;
 
-		// await axios.post("url", {
-		// 	video: video
-		// })
+		console.log(profile);
 
 		setOutput("Working on it . . .");
 
-		setTimeout(() => {setOutput("sample output")}, 5000);
+		let data = new FormData();
+
+		data.append("video", video);
+		data.append("sport", profile.sport);
+		data.append("skill_level", profile.skill_level);
+		data.append("age", profile.age);
+		data.append("height_cm", (profile.height_ft * 30.48 + profile.height_cm * 2.54));
+		data.append("weight_kg", profile.weight_lbs / 2.205);
+		data.append("fatigue_level", profile.fatigue_level);
+		data.append("injury_history", profile.injury_history);
+
+		axios({
+			method: "post",
+			url: "/api/analyze",
+			data: data
+		})
 
 		// setOutput(await axios.get("url"));
 
 		// test GET request
-		let data = await getDataFromBackend('random', {maximum: 100});
-		console.log(data.itemId);
+		// let data = await getDataFromBackend('random', {maximum: 100});
+		// console.log(data.itemId);
 
 		console.log(video);
     };
