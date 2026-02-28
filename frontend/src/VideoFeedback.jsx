@@ -1,21 +1,21 @@
 import { useState } from "react";
 
+import { getDataFromBackend } from "./Utils";
+
 import axios from "axios"
 
 import "./App.css";
 
-import logo from "./assets/testlogo.png"
-
 function VideoFeedback({}) {
     const [video, setVideo] = useState(undefined);
 
-	const [output, setOutput] = useState(undefined);
+	const [output, setOutput] = useState("");
 
     let onChangeHandler = (e) => {
         setVideo(e.target.files[0]);
     };
 
-    let onSubmitHandler = (e) => {
+    let onSubmitHandler = async (e) => {
 		if (video === undefined)
 			return;
 
@@ -27,11 +27,11 @@ function VideoFeedback({}) {
 
 		setTimeout(() => {setOutput("sample output")}, 5000);
 
-		// getDataFunc = async () => {
-		// 	setOutput(await axios.get("url"))
-		// }
-		
-		// getDataFunc();
+		// setOutput(await axios.get("url"));
+
+		// test GET request
+		let data = await getDataFromBackend('random', {maximum: 100});
+		console.log(data.itemId);
 
 		console.log(video);
     };
@@ -42,9 +42,9 @@ function VideoFeedback({}) {
 		<div>
         	<input type="button" className="button submit-button" onClick={onSubmitHandler} value="Submit Video"/>
 		</div>
-		<div>
+		<p>
 			{output}
-		</div>
+		</p>
 	</div>)
 }
 
