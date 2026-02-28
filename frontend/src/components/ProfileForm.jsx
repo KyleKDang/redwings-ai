@@ -16,15 +16,16 @@ function Field({ label, hint, children }) {
 }
 
 const inputCls =
-  "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E8112D] focus:bg-white/8 transition-all duration-200 font-body text-sm";
+  "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E8112D] focus:bg-white/[0.08] transition-all duration-200 font-body text-sm";
 
 export default function ProfileForm({ onSubmit }) {
   const [form, setForm] = useState({
     sport: "Snowboarding",
     skill_level: "Intermediate",
     age: "",
-    height_cm: "",
-    weight_kg: "",
+    height_ft: "",
+    height_in: "",
+    weight_lbs: "",
     fatigue_level: 5,
     injury_history: "",
   });
@@ -74,27 +75,41 @@ export default function ProfileForm({ onSubmit }) {
         </div>
       </Field>
 
-      {/* Body metrics row */}
+      {/* Body metrics */}
       <div className="grid grid-cols-3 gap-4">
-        <Field label="Age" hint="years">
+        <Field label="Age" hint="yrs">
           <input type="number" placeholder="24" min={10} max={80}
             value={form.age} onChange={(e) => set("age", e.target.value)}
             className={inputCls} required />
         </Field>
-        <Field label="Height" hint="cm">
-          <input type="number" placeholder="175"
-            value={form.height_cm} onChange={(e) => set("height_cm", e.target.value)}
-            className={inputCls} required />
+        <Field label="Height">
+          <div className="flex gap-2">
+            <div className="relative flex-1">
+              <input type="number" placeholder="5" min={3} max={8}
+                value={form.height_ft} onChange={(e) => set("height_ft", e.target.value)}
+                className={inputCls} required />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white/30 font-condensed">ft</span>
+            </div>
+            <div className="relative flex-1">
+              <input type="number" placeholder="10" min={0} max={11}
+                value={form.height_in} onChange={(e) => set("height_in", e.target.value)}
+                className={inputCls} required />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white/30 font-condensed">in</span>
+            </div>
+          </div>
         </Field>
-        <Field label="Weight" hint="kg">
-          <input type="number" placeholder="70"
-            value={form.weight_kg} onChange={(e) => set("weight_kg", e.target.value)}
+        <Field label="Weight" hint="lbs">
+          <input type="number" placeholder="160"
+            value={form.weight_lbs} onChange={(e) => set("weight_lbs", e.target.value)}
             className={inputCls} required />
         </Field>
       </div>
 
       {/* Fatigue slider */}
-      <Field label={`Fatigue Level — ${form.fatigue_level} / 10`} hint={form.fatigue_level <= 3 ? "Feeling fresh" : form.fatigue_level <= 6 ? "Somewhat tired" : "Very fatigued"}>
+      <Field
+        label={`Fatigue Level — ${form.fatigue_level} / 10`}
+        hint={form.fatigue_level <= 3 ? "Feeling fresh" : form.fatigue_level <= 6 ? "Somewhat tired" : "Very fatigued"}
+      >
         <div className="relative pt-1">
           <input
             type="range" min={1} max={10} value={form.fatigue_level}
