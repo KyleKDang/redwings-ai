@@ -1,43 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap');
 
+/* ── Custom font utilities used in JSX ── */
+.font-display   { font-family: 'Bebas Neue', sans-serif; }
+.font-condensed { font-family: 'Barlow Condensed', sans-serif; }
+.font-body      { font-family: 'Barlow', sans-serif; }
+
+/* ── Teammate's original styles (adjusted for dark theme) ── */
 
 #root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
-}
-
-.instruction {
-	font-size: 30px;
-}
-
-input[type="file"]::file-selector-button {
-	border: 0px solid #ccc;
-	padding: 10px 15px;
-	background-color: white;
-	font-size: 30px;
-	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	cursor: pointer;
-}
-
-input[type="file"]::file-selector-button:hover {
-	background-color: rgb(156, 156, 156);
-}
-
-.button {
-	border: 1px solid #ccc;
-	padding: 5px 10px;
-	background-color: rgb(225, 225, 225);
-	font-size: 30px;
-	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	margin: 30px;
-	cursor: pointer;
-}
-
-.submit-button:hover {
-	background-color: rgb(156, 156, 156);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 .logo {
-	max-width: 300px;
+  max-width: 300px;
 }
+
+.instruction {
+  font-size: 30px;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+input[type="file"]::file-selector-button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: rgba(232, 17, 45, 0.15);
+  border-color: rgba(232, 17, 45, 0.4);
+}
+
+.button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 24px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #E8112D;
+  border-color: #E8112D;
+}
+
+/* ── Range slider thumb ── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #E8112D;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(232, 17, 45, 0.5);
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #060D18; }
+::-webkit-scrollbar-thumb { background: #E8112D; border-radius: 2px; }
