@@ -29,8 +29,8 @@ function VideoFeedback({profile}) {
 		data.append("sport", profile.sport);
 		data.append("skill_level", profile.skill_level);
 		data.append("age", profile.age);
-		data.append("height_cm", (profile.height_ft * 30.48 + profile.height_cm * 2.54));
-		data.append("weight_kg", profile.weight_lbs / 2.205);
+		data.append("height_cm", (profile.height_ft * 30.48 + profile.height_in * 2.54)); // ft, in to cm
+		data.append("weight_kg", profile.weight_lbs / 2.205); // pounds to kg
 		data.append("fatigue_level", profile.fatigue_level);
 		data.append("injury_history", profile.injury_history);
 
