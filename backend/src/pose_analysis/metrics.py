@@ -2,7 +2,8 @@ import numpy as np
 
 def calculate_angle(a, b, c):
     """
-    Calculates the angle (in degrees) at point B formed by the vector A→B→C.
+    Calculates the 3D angle (in degrees) at point B formed by the vector A→B→C.
+    Uses x, y, and z coordinates so it works regardless of camera angle.
 
     Args:
         a, b, c: Each is a [x, y, z] landmark coordinate.
@@ -12,20 +13,18 @@ def calculate_angle(a, b, c):
     Returns:
         float: Angle in degrees (0-180).
     """
-    a = np.array(a)
-    b = np.array(b)
-    c = np.array(c)
+    a = np.array(a[:3])
+    b = np.array(b[:3])
+    c = np.array(c[:3])
 
-    radians = np.arctan2(c[1]-b[1], c[0]-b[0]) - \
-              np.arctan2(a[1]-b[1], a[0]-b[0])
+    ba = a - b
+    bc = c - b
 
-    angle = abs(radians * 180.0 / np.pi)
+    cosine = np.dot(ba, bc) / (np.linalg.norm(ba) * np.linalg.norm(bc) + 1e-6)
+    cosine = np.clip(cosine, -1.0, 1.0)  # Prevent floating point errors
+    angle = np.degrees(np.arccos(cosine))
 
-    if angle > 180:
-        angle = 360 - angle
-
-    return angle
-
+    return float(angle)
 
 def calculate_distance(a, b):
     """
