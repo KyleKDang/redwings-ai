@@ -1,7 +1,7 @@
 
 import "./App.css";
 
-import VideoFeedback from "./VideoFeedback"
+import VideoFeedback from "./components/VideoFeedback"
 
 import logo from "./assets/testlogo.png"
 
