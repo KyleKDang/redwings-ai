@@ -37,7 +37,6 @@ function VideoFeedback({}) {
     };
 	
 	return (<div>
-		<img class="logo" src={logo}></img>
 		<p className="instruction">Input a video:</p>
 		<input type="file" accept=".mp4" className="button" onChange={onChangeHandler} />
 		<div>
