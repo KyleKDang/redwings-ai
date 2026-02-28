@@ -12,19 +12,26 @@ function VideoFeedback({}) {
 	const [output, setOutput] = useState(undefined);
 
     let onChangeHandler = (e) => {
-        setVideo(e.target.files[0])
+        setVideo(e.target.files[0]);
     };
 
     let onSubmitHandler = (e) => {
 		if (video === undefined)
 			return;
 
-		// await axios.post()
+		// await axios.post("url", {
+		// 	video: video
+		// })
 
 		setOutput("Working on it . . .");
 
 		setTimeout(() => {setOutput("sample output")}, 5000);
-		// replace later with get data
+
+		// getDataFunc = async () => {
+		// 	setOutput(await axios.get("url"))
+		// }
+		
+		// getDataFunc();
 
 		console.log(video);
     };
