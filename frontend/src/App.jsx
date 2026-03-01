@@ -4,7 +4,6 @@ import VideoFeedback from "./components/VideoFeedback";
 import Navbar from "./components/Navbar";
 import ProfileForm from "./components/ProfileForm";
 import Results from "./components/Results";
-import logo from "./assets/logo.png";
 import cleanlogo from "./assets/cleanlogo.png";
 
 import Field from "./components/Field";
