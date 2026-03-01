@@ -72,6 +72,7 @@ async def analyze(
         "weight_kg": round(weight_kg, 1),
         "fatigue_level": fatigue_level,
         "injury_history": injury_history,
+        "video_info": video_info,
     }
 
     # Step 4: Generate coaching feedback via LLM

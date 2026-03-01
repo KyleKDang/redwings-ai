@@ -35,7 +35,7 @@ function VideoFeedback({ profile, onResult, videoInfo }) {
         data.append("weight_kg", profile.weight_lbs / 2.205);
         data.append("fatigue_level", profile.fatigue_level);
         data.append("injury_history", profile.injury_history || "None");
-		// data.append("video_info", videoInfo);
+		data.append("video_info", videoInfo || "None");
 
         try {
             const response = await axios.post("/api/analyze", data);
