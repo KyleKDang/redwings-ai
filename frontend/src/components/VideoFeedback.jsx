@@ -34,19 +34,15 @@ function VideoFeedback({profile}) {
 		data.append("fatigue_level", profile.fatigue_level);
 		data.append("injury_history", profile.injury_history);
 
-		axios({
+		const response = await axios({
 			method: "post",
 			url: "/api/analyze",
 			data: data
-		})
+		});
 
-		// setOutput(await axios.get("url"));
+		console.log(response);
 
-		// test GET request
-		// let data = await getDataFromBackend('random', {maximum: 100});
-		// console.log(data.itemId);
-
-		console.log(video);
+		setOutput(response.data.coaching);
     };
 	
 	return (<div>

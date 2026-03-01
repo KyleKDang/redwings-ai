@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const SPORTS = ["Snowboarding", "Skateboarding", "BMX", "Skiing", "Parkour", "Surfing", "Other"];
+
+const SPORTS = ["Snowboarding", "Skateboarding", "BMX", "Skiing", "Parkour", "Surfing", "Motocross", "Rock Climbing", "Wingsuiting", "Other"];
 const SKILL_LEVELS = ["Beginner", "Intermediate", "Advanced", "Pro"];
 
 function Field({ label, hint, children }) {
