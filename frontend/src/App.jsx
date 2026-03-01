@@ -3,15 +3,23 @@ import { useState } from "react";
 import VideoFeedback from "./components/VideoFeedback";
 import Navbar from "./components/Navbar";
 import ProfileForm from "./components/ProfileForm";
+import Results from "./components/Results";
 import logo from "./assets/testlogo.png";
 
 function App() {
   const [step, setStep] = useState(0);
   const [profile, setProfile] = useState(null);
+  const [result, setResult] = useState(null);
 
   const handleProfileSave = (data) => {
     setProfile(data);
     setStep(1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleResult = (data) => {
+    setResult(data);
+    setStep(2);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -95,7 +103,7 @@ function App() {
                   {profile.sport} · {profile.skill_level}
                 </p>
                 <p className="font-body text-xs text-white/40 mt-0.5">
-                  Age {profile.age} · {profile.height_cm}cm · {profile.weight_kg}kg · Fatigue {profile.fatigue_level}/10
+                  Age {profile.age} · {profile.height_ft}'{profile.height_in}" · {profile.weight_lbs}lbs · Fatigue {profile.fatigue_level}/10
                 </p>
               </div>
               <button
@@ -108,7 +116,7 @@ function App() {
           )}
 
           <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-10 hover:border-[#E8112D]/25 transition-colors duration-300">
-            <VideoFeedback profile={profile}/>
+            <VideoFeedback profile={profile} onResult={handleResult} />
           </div>
 
           {/* How it works */}
@@ -133,6 +141,14 @@ function App() {
             </div>
           </div>
         </section>
+      )}
+
+      {/* ── Step 2: Results ── */}
+      {step === 2 && result && (
+        <Results
+          result={result}
+          onReset={() => { setStep(1); setResult(null); }}
+        />
       )}
 
       {/* ── Footer ── */}
