@@ -75,7 +75,7 @@ Return ONLY valid JSON in the exact structure requested.
 }
 
     response = client.chat.completions.create(
-        model="gpt-5-mini",
+        model="gpt-5.2",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": json.dumps(user_payload, indent=2)}
