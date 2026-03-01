@@ -1,20 +1,9 @@
 import { useState } from "react";
+import Field from "./Field";
 
 
 const SPORTS = ["Snowboarding", "Skateboarding", "BMX", "Skiing", "Parkour", "Surfing", "Motocross", "Rock Climbing", "Wingsuiting", "Other"];
 const SKILL_LEVELS = ["Beginner", "Intermediate", "Advanced", "Pro"];
-
-function Field({ label, hint, children }) {
-  return (
-    <div className="space-y-2">
-      <div className="flex items-baseline justify-between">
-        <label className="text-[15px] font-condensed tracking-[0.25em] uppercase text-white/50">{label}</label>
-        {hint && <span className="text-[10px] text-white/25 font-body">{hint}</span>}
-      </div>
-      {children}
-    </div>
-  );
-}
 
 const inputCls =
   "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E8112D] focus:bg-white/[0.08] transition-all duration-200 font-body text-sm";

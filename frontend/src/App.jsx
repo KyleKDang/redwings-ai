@@ -7,10 +7,16 @@ import Results from "./components/Results";
 import logo from "./assets/logo.png";
 import cleanlogo from "./assets/cleanlogo.png";
 
+import Field from "./components/Field";
+
+const inputCls =
+  "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E8112D] focus:bg-white/[0.08] transition-all duration-200 font-body text-sm";
+
 function App() {
   const [step, setStep] = useState(0);
   const [profile, setProfile] = useState(null);
   const [result, setResult] = useState(null);
+  const [videoInfo, setVideoInfo] = useState(null);
 
   const handleProfileSave = (data) => {
     setProfile(data);
@@ -116,8 +122,18 @@ function App() {
             </div>
           )}
 
+          {/* Information about what is happening */}
+            <Field label="Video Info">
+            <textarea
+              placeholder="e.g. Performing a 10ft jump..."
+              onChange={(e) => setVideoInfo(e.target.value)}
+              rows={3}
+              className={`${inputCls} resize-none`}
+            />
+          </Field>
+
           <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-10 hover:border-[#E8112D]/25 transition-colors duration-300">
-            <VideoFeedback profile={profile} onResult={handleResult} />
+            <VideoFeedback profile={profile} onResult={handleResult} videoInfo={videoInfo}/>
           </div>
 
           {/* How it works */}

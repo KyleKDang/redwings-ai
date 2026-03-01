@@ -35,6 +35,7 @@ async def analyze(
     weight_kg: float = Form(...),
     fatigue_level: int = Form(...),
     injury_history: str = Form("None"),
+    video_info: str = Form("None")
 ):
     # Validate video type
     if not video.content_type.startswith("video/"):

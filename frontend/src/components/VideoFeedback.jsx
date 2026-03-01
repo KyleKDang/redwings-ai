@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../App.css";
 
-function VideoFeedback({ profile, onResult }) {
+function VideoFeedback({ profile, onResult, videoInfo }) {
     const [video, setVideo] = useState(undefined);
     const [output, setOutput] = useState("");
     const [loading, setLoading] = useState(false);
@@ -35,6 +35,7 @@ function VideoFeedback({ profile, onResult }) {
         data.append("weight_kg", profile.weight_lbs / 2.205);
         data.append("fatigue_level", profile.fatigue_level);
         data.append("injury_history", profile.injury_history || "None");
+		// data.append("video_info", videoInfo);
 
         try {
             const response = await axios.post("/api/analyze", data);
