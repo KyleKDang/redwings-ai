@@ -110,7 +110,7 @@ function App() {
                   {profile.sport} · {profile.skill_level}
                 </p>
                 <p className="font-body text-xs text-white/40 mt-0.5">
-                  Age {profile.age} · {profile.height_ft}'{profile.height_in}" · {profile.weight_lbs}lbs · Fatigue {profile.fatigue_level}/10
+                  Age {profile.age} · {profile.height_ft}'{profile.height_in}" · {profile.weight_lbs}lbs · {profile.training_hours}hrs/wk
                 </p>
               </div>
             </div>

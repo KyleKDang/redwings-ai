@@ -31,9 +31,9 @@ function VideoFeedback({ profile, onResult, videoInfo }) {
         data.append("sport", profile.sport);
         data.append("skill_level", profile.skill_level);
         data.append("age", profile.age);
-        data.append("height_in", profile.height_ft * 12 + profile.height_in);
+        data.append("height_in", parseInt(profile.height_ft) * 12 + parseInt(profile.height_in));
         data.append("weight_lbs", profile.weight_lbs);
-        data.append("fatigue_level", profile.fatigue_level);
+        data.append("training_hours", profile.training_hours);
         data.append("injury_history", profile.injury_history || "None");
 		data.append("video_info", videoInfo || "None");
 
