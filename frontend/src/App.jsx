@@ -4,12 +4,8 @@ import VideoFeedback from "./components/VideoFeedback";
 import Navbar from "./components/Navbar";
 import ProfileForm from "./components/ProfileForm";
 import Results from "./components/Results";
-<<<<<<< HEAD
-import logo from "./assets/testlogo.png";
-=======
 import logo from "./assets/logo.png";
 import cleanlogo from "./assets/cleanlogo.png";
->>>>>>> 11f424673b60dccd82e44646a7a9dedbc95f5a7d
 
 function App() {
   const [step, setStep] = useState(0);
@@ -40,11 +36,7 @@ function App() {
           <section className="relative pt-40 pb-20 px-6 text-center overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-80 bg-[#E8112D] opacity-[0.09] blur-[120px] rounded-full pointer-events-none" />
             <div className="relative max-w-3xl mx-auto">
-<<<<<<< HEAD
-              <img src={logo} alt="RedWings AI" className="h-14 mx-auto mb-8 object-contain opacity-90" />
-=======
               <img src={cleanlogo} alt="RedWings AI" className="h-35 mx-auto mb-8 object-contain opacity-90" />
->>>>>>> 11f424673b60dccd82e44646a7a9dedbc95f5a7d
               <p className="font-condensed text-[0.6rem] tracking-[0.45em] uppercase text-[#E8112D] mb-5">
                 ★ AI-Powered · Extreme Sports ★
               </p>
@@ -83,11 +75,7 @@ function App() {
             <p className="font-body text-white/40 text-sm leading-relaxed max-w-lg mb-8 text-center mx-auto">
               Tell us about your body and experience so the AI can tailor its analysis to you.
             </p>
-<<<<<<< HEAD
-            <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-8 hover:border-[#E8112D]/25 transition-colors duration-300">
-=======
             <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-5 hover:border-[#E8112D]/25 transition-colors duration-300">
->>>>>>> 11f424673b60dccd82e44646a7a9dedbc95f5a7d
               <ProfileForm onSubmit={handleProfileSave} />
             </div>
           </section>
