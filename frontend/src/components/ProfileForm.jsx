@@ -16,7 +16,7 @@ export default function ProfileForm({ onSubmit }) {
     height_ft: "",
     height_in: "",
     weight_lbs: "",
-    fatigue_level: 5,
+    training_hours: 5,
     injury_history: "",
   });
 
@@ -89,27 +89,31 @@ export default function ProfileForm({ onSubmit }) {
           </div>
         </Field>
         <Field label="Weight" hint="lbs">
-          <input type="number" placeholder="160"
+          <input type="number" placeholder="160" min={50} max={500}
             value={form.weight_lbs} onChange={(e) => set("weight_lbs", e.target.value)}
             className={inputCls} required />
         </Field>
       </div>
 
-      {/* Fatigue slider */}
+      {/* Training frequency slider */}
       <Field
-        label={`Fatigue Level — ${form.fatigue_level} / 10`}
-        hint={form.fatigue_level <= 3 ? "Feeling fresh" : form.fatigue_level <= 6 ? "Somewhat tired" : "Very fatigued"}
+        label={`Training Frequency — ${form.training_hours} hrs / week`}
+        hint={form.training_hours <= 2 ? "Casual" : form.training_hours <= 5 ? "Recreational" : form.training_hours <= 10 ? "Serious" : form.training_hours <= 15 ? "Dedicated" : "Competitive"}
       >
         <div className="relative pt-1">
           <input
-            type="range" min={1} max={10} value={form.fatigue_level}
-            onChange={(e) => set("fatigue_level", parseInt(e.target.value))}
+            type="range" min={0} max={20} value={form.training_hours}
+            onChange={(e) => set("training_hours", parseInt(e.target.value))}
             className="w-full h-1 appearance-none bg-white/10 rounded-full accent-[#E8112D] cursor-pointer"
           />
-          <div className="flex justify-between mt-2">
-            {[1,2,3,4,5,6,7,8,9,10].map(n => (
-              <div key={n} className={`w-1 h-1 rounded-full ${n <= form.fatigue_level ? "bg-[#E8112D]" : "bg-white/15"}`} />
+          <div className="flex justify-between mt-2 px-0.5">
+            {[0,2,4,6,8,10,12,14,16,18,20].map(n => (
+              <div key={n} className={`w-1 h-1 rounded-full ${n <= form.training_hours ? "bg-[#E8112D]" : "bg-white/15"}`} />
             ))}
+          </div>
+          <div className="flex justify-between mt-1">
+            <span className="text-[10px] text-white/25 font-condensed">0 hrs</span>
+            <span className="text-[10px] text-white/25 font-condensed">20 hrs</span>
           </div>
         </div>
       </Field>

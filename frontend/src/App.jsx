@@ -54,7 +54,7 @@ function App() {
                 and AI coaching built for athletes who don't hold back.
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                {["Pose Detection", "Injury Risk Score", "Form Corrections", "AI Coaching"].map((f) => (
+                {["Pose Detection", "Injury Risk", "Form Corrections", "AI Coaching"].map((f) => (
                   <span key={f} className="font-condensed text-[0.9rem] tracking-[0.25em] uppercase border border-white/[0.07] text-white/35 px-4 py-1.5 rounded-full">
                     {f}
                   </span>
@@ -113,17 +113,11 @@ function App() {
                   Age {profile.age} · {profile.height_ft}'{profile.height_in}" · {profile.weight_lbs}lbs · Fatigue {profile.fatigue_level}/10
                 </p>
               </div>
-              <button
-                onClick={() => setStep(0)}
-                className="font-condensed text-[0.6rem] tracking-widest uppercase text-[#E8112D] hover:underline"
-              >
-                Edit
-              </button>
             </div>
           )}
 
           {/* Information about what is happening */}
-            <Field label="Video Info">
+            <Field label="Video Description">
             <textarea
               placeholder="e.g. Performing a 10ft jump..."
               onChange={(e) => setVideoInfo(e.target.value)}

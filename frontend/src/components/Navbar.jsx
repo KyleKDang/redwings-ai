@@ -9,7 +9,6 @@ export default function Navbar({ currentStep, onStepClick }) {
 
         {/* Brand */}
         <div className="flex items-center gap-3">
-          <img src={logo} alt="RedWings AI" className="h-8 w-auto object-contain" />
           <span className="font-display text-[1.2rem] tracking-[0.2em] text-white">
             REDWINGS <span className="text-[#E8112D]">AI</span>
           </span>
