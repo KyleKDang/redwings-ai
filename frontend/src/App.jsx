@@ -75,7 +75,7 @@ function App() {
             <p className="font-body text-white/40 text-sm leading-relaxed max-w-lg mb-8 text-center mx-auto">
               Tell us about your body and experience so the AI can tailor its analysis to you.
             </p>
-            <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-8 hover:border-[#E8112D]/25 transition-colors duration-300">
+            <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-5 hover:border-[#E8112D]/25 transition-colors duration-300">
               <ProfileForm onSubmit={handleProfileSave} />
             </div>
           </section>
