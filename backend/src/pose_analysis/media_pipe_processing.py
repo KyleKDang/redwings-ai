@@ -22,7 +22,7 @@ options = PoseLandmarkerOptions(
 mp_pose = PoseLandmarker.create_from_options(options)
 
 
-def analyze_video(video_path, frame_skip=5):
+def analyze_video(video_path, frame_skip=1):
     """
     Extracts 3D joint coordinates from every Nth frame of a video.
 
@@ -67,7 +67,7 @@ def analyze_video(video_path, frame_skip=5):
             # Each landmark has normalized x, y, z coordinates (0.0 to 1.0)
             frame_joints = []
             for landmark in results.pose_landmarks[0]:
-                frame_joints.append([landmark.x, landmark.y, landmark.z])
+                frame_joints.append([landmark.x, landmark.y, landmark.z, landmark.visibility])
             joint_data.append(frame_joints)  # Add this frame's 33 joints to the dataset
 
         frame_count += 1
