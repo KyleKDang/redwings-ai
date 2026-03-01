@@ -89,7 +89,7 @@ export default function ProfileForm({ onSubmit }) {
           </div>
         </Field>
         <Field label="Weight" hint="lbs">
-          <input type="number" placeholder="160"
+          <input type="number" placeholder="160" min={50} max={500}
             value={form.weight_lbs} onChange={(e) => set("weight_lbs", e.target.value)}
             className={inputCls} required />
         </Field>
