@@ -82,7 +82,7 @@ function App() {
           <h2 className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[0.12em] text-white mb-2">
             ANALYZE YOUR MOVEMENT
           </h2>
-          <p className="font-body text-white/40 text-sm leading-relaxed max-w-lg mb-8">
+          <p className="font-body text-white/40 text-sm leading-relaxed max-w-lg mb-8 text-center mx-auto">
             Drop in a video of your trick or training run. Our computer vision pipeline
             extracts joint angles and impact data — then our AI coach turns it into actionable advice.
           </p>

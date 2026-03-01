@@ -16,8 +16,10 @@ function VideoFeedback({profile}) {
     };
 
     let onSubmitHandler = async (e) => {
-		if (video === undefined)
+		if (video === undefined) {
+			setOutput("Please upload a video.");
 			return;
+		}
 
 		console.log(profile);
 
