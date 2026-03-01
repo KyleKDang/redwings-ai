@@ -1,4 +1,4 @@
-import logo from "../assets/testlogo.png";
+import logo from "../assets/logo.png";
 
 const steps = ["PROFILE", "ANALYZE", "RESULTS"];
 
