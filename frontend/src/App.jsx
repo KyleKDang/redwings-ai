@@ -113,12 +113,6 @@ function App() {
                   Age {profile.age} · {profile.height_ft}'{profile.height_in}" · {profile.weight_lbs}lbs · Fatigue {profile.fatigue_level}/10
                 </p>
               </div>
-              <button
-                onClick={() => setStep(0)}
-                className="font-condensed text-[0.6rem] tracking-widest uppercase text-[#E8112D] hover:underline"
-              >
-                Edit
-              </button>
             </div>
           )}
 
