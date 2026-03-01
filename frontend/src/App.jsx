@@ -43,7 +43,7 @@ function App() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-80 bg-[#E8112D] opacity-[0.09] blur-[120px] rounded-full pointer-events-none" />
             <div className="relative max-w-3xl mx-auto">
               <img src={cleanlogo} alt="RedWings AI" className="h-35 mx-auto mb-8 object-contain opacity-90" />
-              <p className="font-condensed text-[0.6rem] tracking-[0.45em] uppercase text-[#E8112D] mb-5">
+              <p className="font-condensed text-[1.5rem] tracking-[0.45em] uppercase text-[#E8112D] mb-5">
                 ★ AI-Powered · Extreme Sports ★
               </p>
               <h1 className="font-display text-[clamp(3.5rem,10vw,7rem)] tracking-[0.06em] leading-[0.95] text-white mb-6">
@@ -55,7 +55,7 @@ function App() {
               </p>
               <div className="flex flex-wrap justify-center gap-2">
                 {["Pose Detection", "Injury Risk Score", "Form Corrections", "AI Coaching"].map((f) => (
-                  <span key={f} className="font-condensed text-[0.6rem] tracking-[0.25em] uppercase border border-white/[0.07] text-white/35 px-4 py-1.5 rounded-full">
+                  <span key={f} className="font-condensed text-[0.9rem] tracking-[0.25em] uppercase border border-white/[0.07] text-white/35 px-4 py-1.5 rounded-full">
                     {f}
                   </span>
                 ))}
@@ -72,13 +72,13 @@ function App() {
 
           {/* Profile form */}
           <section className="max-w-2xl mx-auto w-full px-6 py-20">
-            <span className="font-condensed text-[0.6rem] tracking-[0.4em] uppercase text-[#E8112D] block mb-1">
+            <span className="font-condensed text-[1.8rem] tracking-[0.4em] uppercase text-[#E8112D] block mb-1">
               Step 01
             </span>
             <h2 className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[0.12em] text-white mb-2">
               ATHLETE PROFILE
             </h2>
-            <p className="font-body text-white/40 text-sm leading-relaxed max-w-lg mb-8 text-center mx-auto">
+            <p className="font-body text-white/40 text-sm leading-relaxed max-w-lg mb-8 text-center mx-auto text-[0.9rem]">
               Tell us about your body and experience so the AI can tailor its analysis to you.
             </p>
             <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-5 hover:border-[#E8112D]/25 transition-colors duration-300">
@@ -91,7 +91,7 @@ function App() {
       {/* ── Step 1: Upload ── */}
       {step === 1 && (
         <section className="max-w-3xl mx-auto w-full px-6 pt-28 pb-20">
-          <span className="font-condensed text-[0.6rem] tracking-[0.4em] uppercase text-[#E8112D] block mb-1">
+          <span className="font-condensed text-[1.8rem] tracking-[0.4em] uppercase text-[#E8112D] block mb-1">
             Step 02
           </span>
           <h2 className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[0.12em] text-white mb-2">
@@ -138,7 +138,7 @@ function App() {
 
           {/* How it works */}
           <div className="mt-16">
-            <h3 className="font-display text-sm tracking-[0.4em] text-white/30 text-center mb-8">
+            <h3 className="font-display text-sm text-[1.5rem] tracking-[0.4em] text-white/30 text-center mb-8">
               HOW IT WORKS
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-white/[0.07] border border-white/[0.07] rounded-2xl overflow-hidden">
@@ -152,7 +152,7 @@ function App() {
                   <span className="font-display text-xs tracking-[0.2em] text-[#E8112D]">{n}</span>
                   <span className="text-2xl">{icon}</span>
                   <p className="font-condensed text-xs tracking-[0.15em] uppercase text-white font-semibold">{label}</p>
-                  <p className="font-body text-xs text-white/35 leading-relaxed">{desc}</p>
+                  <p className="font-body text-[1.0rem] text-xs text-white/35 leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>

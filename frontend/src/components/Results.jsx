@@ -25,7 +25,7 @@ function BulletList({ items, icon, iconClass }) {
 
 function SectionLabel({ children }) {
   return (
-    <p className="font-condensed text-[0.6rem] tracking-[0.3em] uppercase text-white/40 mb-3">
+    <p className="font-condensed text-[1.2rem] tracking-[0.3em] uppercase text-white/40 mb-3">
       {children}
     </p>
   );
