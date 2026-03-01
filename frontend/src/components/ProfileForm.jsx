@@ -8,7 +8,11 @@ function Field({ label, hint, children }) {
   return (
     <div className="space-y-2">
       <div className="flex items-baseline justify-between">
+<<<<<<< HEAD
         <label className="text-[10px] font-condensed tracking-[0.25em] uppercase text-white/50">{label}</label>
+=======
+        <label className="text-[15px] font-condensed tracking-[0.25em] uppercase text-white/50">{label}</label>
+>>>>>>> 11f424673b60dccd82e44646a7a9dedbc95f5a7d
         {hint && <span className="text-[10px] text-white/25 font-body">{hint}</span>}
       </div>
       {children}

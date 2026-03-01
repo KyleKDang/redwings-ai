@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import logo from "../assets/testlogo.png";
+=======
+import logo from "../assets/logo.png";
+>>>>>>> 11f424673b60dccd82e44646a7a9dedbc95f5a7d
 
 const steps = ["PROFILE", "ANALYZE", "RESULTS"];
 

@@ -1,7 +1,6 @@
 import numpy as np
 from scipy.signal import savgol_filter
 
-
 def calculate_angle(a, b, c):
     """
     Calculates the 3D angle (in degrees) at point B formed by the vector A→B→C.
