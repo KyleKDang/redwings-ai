@@ -123,7 +123,7 @@ function App() {
           )}
 
           {/* Information about what is happening */}
-            <Field label="Video Info">
+            <Field label="Video Description">
             <textarea
               placeholder="e.g. Performing a 10ft jump..."
               onChange={(e) => setVideoInfo(e.target.value)}
