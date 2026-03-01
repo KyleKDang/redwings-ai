@@ -24,7 +24,6 @@ function VideoFeedback({ profile, onResult }) {
         }
 
         setLoading(true);
-        setOutput("Working on it . . .");
         setError("");
 
         const data = new FormData();
