@@ -139,7 +139,7 @@ function App() {
                 { n: "01", icon: "🎬", label: "Upload",  desc: "Submit a video of your trick or training session" },
                 { n: "02", icon: "🦴", label: "Detect",  desc: "MediaPipe extracts pose and joint angles frame by frame" },
                 { n: "03", icon: "⚡", label: "Analyze", desc: "Risk engine scores your form and flags asymmetries" },
-                { n: "04", icon: "🎯", label: "Coach",   desc: "GPT-4o generates personalized corrections and drills" },
+                { n: "04", icon: "🎯", label: "Coach",   desc: "GPT-5.2 generates personalized corrections and drills" },
               ].map(({ n, icon, label, desc }) => (
                 <div key={n} className="bg-[#0b1525] hover:bg-[#E8112D]/[0.04] transition-colors duration-200 p-6 flex flex-col gap-2">
                   <span className="font-display text-xs tracking-[0.2em] text-[#E8112D]">{n}</span>
