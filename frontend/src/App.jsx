@@ -63,7 +63,7 @@ function App() {
             <h2 className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[0.12em] text-white mb-2">
               ATHLETE PROFILE
             </h2>
-            <p className="font-body text-white/40 text-sm leading-relaxed max-w-lg mb-8">
+            <p className="font-body text-white/40 text-sm leading-relaxed max-w-lg mb-8 text-center mx-auto">
               Tell us about your body and experience so the AI can tailor its analysis to you.
             </p>
             <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-8 hover:border-[#E8112D]/25 transition-colors duration-300">
