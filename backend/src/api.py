@@ -33,7 +33,7 @@ async def analyze(
     age: int = Form(...),
     height_cm: float = Form(...),
     weight_kg: float = Form(...),
-    fatigue_level: int = Form(...),
+    training_hours: int = Form(...),
     injury_history: str = Form("None"),
     video_info: str = Form("None")
 ):
@@ -70,7 +70,7 @@ async def analyze(
         "age": age,
         "height_cm": round(height_cm, 1),
         "weight_kg": round(weight_kg, 1),
-        "fatigue_level": fatigue_level,
+        "training_hours": training_hours,
         "injury_history": injury_history,
         "video_info": video_info,
     }
