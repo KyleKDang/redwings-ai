@@ -1,23 +1,28 @@
 import json
-from openai import OpenAI
-import json
 import os
-def generate_coaching_feedback(input_data: dict) -> dict:
-    client = OpenAI(api_key=input_data["api_key"])
+from openai import OpenAI
 
-    profile = input_data["user_profile"]
-    movement = input_data["movement"]
-    metrics = input_data["metrics"]
+
+def generate_coaching_feedback(profile: dict, metrics: dict) -> dict:
+    """
+    Takes athlete profile and biomechanical metrics from MediaPipe,
+    returns structured coaching feedback as a dict.
+    """
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY environment variable not set")
+
+    client = OpenAI(api_key=api_key)
 
     system_prompt = """
-You are an elite Red Bull snowboarding performance coach with biomechanics expertise.
-Analyze performance metrics and provide structured, safety-aware coaching feedback.
-Be precise and practical.
-Return ONLY valid JSON in the exact structure requested.
+You are an elite extreme sports performance coach with biomechanics expertise.
+Analyze the provided biomechanical metrics and athlete profile, then give structured,
+actionable coaching feedback focused on injury prevention and technique improvement.
+Be precise, practical, and safety-aware.
+Return ONLY valid JSON in the exact structure requested — no extra text or markdown.
 """
 
     user_payload = {
-        "movement": movement,
         "athlete_profile": profile,
         "biomechanical_metrics": metrics,
         "required_output_structure": {
@@ -36,14 +41,12 @@ Return ONLY valid JSON in the exact structure requested.
             {"role": "user", "content": json.dumps(user_payload, indent=2)}
         ],
         response_format={"type": "json_object"},
-        reasoning_effort="low",
-        verbosity="low"
     )
 
     content = response.choices[0].message.content
 
-    # Safely parse JSON before returning
     try:
         return json.loads(content)
     except json.JSONDecodeError:
         return {"error": "Invalid JSON from model", "raw_response": content}
+    
