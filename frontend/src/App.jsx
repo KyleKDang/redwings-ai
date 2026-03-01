@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import ProfileForm from "./components/ProfileForm";
 import Results from "./components/Results";
 import logo from "./assets/logo.png";
+import cleanlogo from "./assets/cleanlogo.png";
 
 function App() {
   const [step, setStep] = useState(0);
@@ -35,7 +36,7 @@ function App() {
           <section className="relative pt-40 pb-20 px-6 text-center overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-80 bg-[#E8112D] opacity-[0.09] blur-[120px] rounded-full pointer-events-none" />
             <div className="relative max-w-3xl mx-auto">
-              <img src={logo} alt="RedWings AI" className="h-35 mx-auto mb-8 object-contain opacity-90" />
+              <img src={cleanlogo} alt="RedWings AI" className="h-35 mx-auto mb-8 object-contain opacity-90" />
               <p className="font-condensed text-[0.6rem] tracking-[0.45em] uppercase text-[#E8112D] mb-5">
                 ★ AI-Powered · Extreme Sports ★
               </p>
